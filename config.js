@@ -8,10 +8,10 @@ const siteConfig = {
     email: "contacto@resolverchile.cl",
     atencion: "Presencial / Online",
 
-    // Videos de YouTube (¡Ahora solo pegas el enlace completo!)
+    // Videos de YouTube (Solo pegas el enlace completo)
     videos: [
         {
-            url: "https://youtu.be/ZrJOj9OmWWg?list=RDZrJOj9OmWWg", 
+            url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", 
             titulo: "¿Cómo evitar multas en la Dirección del Trabajo?",
             descripcion: "Consejos clave para mantener la documentación de tu PYME en orden."
         },
