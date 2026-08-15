@@ -60,60 +60,54 @@
         </nav>
     </header>
 
+    <!-- Hero Dinámico -->
     <section id="inicio" class="hero">
-        <h1>"La mejor defensa es la <span>prevención</span>."</h1>
-        <p>Asesoría laboral práctica para micro, pequeñas y medianas empresas. Ayudamos a tomar decisiones correctas y reducir riesgos de multas o conflictos.</p>
-        <a href="#contacto" class="btn">Solicitar Evaluación</a>
+        <h1 id="hero-titulo"></h1>
+        <p id="hero-subtitulo"></p>
+        <a href="#contacto" class="btn" id="hero-btn"></a>
     </section>
 
+    <!-- Enfoque Dinámico -->
     <section id="enfoque">
         <div class="section-title">
-            <h2>Asesoría Laboral Preventiva para PYMES</h2>
-            <p>Previene los problemas laborales antes de que se conviertan en conflictos</p>
+            <h2 id="enfoque-titulo"></h2>
+            <p id="enfoque-subtitulo"></p>
         </div>
         <div class="grid">
             <div class="card">
-                <h3>Evita Costos Inesperados</h3>
-                <p>Un error en un contrato, remuneración, vacaciones o finiquito puede terminar convirtiéndose en una multa o demanda costosa. No esperes a tener un problema.</p>
+                <h3 id="enf-t1"></h3>
+                <p id="enf-p1"></p>
             </div>
             <div class="card">
-                <h3>Lenguaje Claro y Práctico</h3>
-                <p>Sin tecnicismos innecesarios. Te explicamos qué hacer antes de contratar, durante la relación laboral y al momento de ponerle término.</p>
+                <h3 id="enf-t2"></h3>
+                <p id="enf-p2"></p>
             </div>
         </div>
     </section>
 
+    <!-- Servicios Dinámicos -->
     <section id="servicios" style="background-color: var(--light-bg);">
         <div class="section-title">
             <h2>Nuestros Servicios</h2>
             <p>Soluciones integrales diseñadas para la realidad de una empresa pequeña</p>
         </div>
-        <ul class="services-list">
-            <li><strong>1. Auditoría laboral preventiva</strong> Revisión total de tu documentación, contratos, anexos y remuneraciones.</li>
-            <li><strong>2. Asesoría en contratación</strong> Orientación en redacción de contratos, cláusulas y funciones.</li>
-            <li><strong>3. Despidos y término de contrato</strong> Análisis previo para mitigar riesgos de reclamación.</li>
-            <li><strong>4. Finiquitos</strong> Revisión de montos pendientes, feriado legal e indemnizaciones.</li>
-            <li><strong>5. Vacaciones y feriado legal</strong> Orientación sobre feriado proporcional y programación.</li>
-            <li><strong>6. Licencias médicas y ausencias</strong> Gestión adecuada frente a ausencias injustificadas.</li>
-            <li><strong>7. Cotizaciones previsionales</strong> Verificación de obligaciones previsionales y períodos pendientes.</li>
-            <li><strong>8. Ley Karin</strong> Prevención, cumplimiento, protocolos y atención de denuncias.</li>
-            <li><strong>9. Fiscalizaciones Dirección del Trabajo</strong> Apoyo y revisión ante requerimientos oficiales.</li>
-            <li><strong>10. Documentos laborales</strong> Cartas de despido y comunicaciones internas.</li>
-            <li><strong>11. Situaciones complejas</strong> Análisis de casos particulares de alto riesgo.</li>
+        <ul class="services-list" id="servicios-list">
+            <!-- Se cargan desde config.js -->
         </ul>
     </section>
 
-    <!-- SECCIÓN DE VIDEOS DINÁMICA -->
+    <!-- Videos Dinámicos -->
     <section id="videos" class="videos-section">
         <div class="section-title">
             <h2>Videos y Cápsulas Informativas</h2>
             <p>Conozca más sobre cómo proteger su empresa con nuestras explicaciones en video</p>
         </div>
         <div class="grid" id="videos-grid">
-            <!-- Los videos se cargan automáticamente desde config.js -->
+            <!-- Se cargan desde config.js -->
         </div>
     </section>
 
+    <!-- Contacto Dinámico -->
     <section id="contacto">
         <div class="section-title">
             <h2>Hablemos de su Caso</h2>
@@ -151,17 +145,38 @@
         <p>&copy; 2026 ResolverChile. Todos los derechos reservados. | La mejor defensa es la prevención.</p>
     </footer>
 
-    <!-- Script que inyecta la información del archivo config.js -->
+    <!-- Script que inyecta la información de config.js -->
     <script src="config.js"></script>
     <script>
-        // Cargar datos de contacto con validación de seguridad
         if (typeof siteConfig !== 'undefined') {
-            document.getElementById('link-whatsapp').innerText = siteConfig.whatsapp || '';
-            document.getElementById('link-whatsapp').href = siteConfig.whatsappLink || '#';
-            document.getElementById('txt-email').innerText = siteConfig.email || '';
-            document.getElementById('txt-atencion').innerText = siteConfig.atencion || '';
+            // Inyectar Hero
+            document.getElementById('hero-titulo').innerHTML = siteConfig.hero.titulo;
+            document.getElementById('hero-subtitulo').innerText = siteConfig.hero.subtitulo;
+            document.getElementById('hero-btn').innerText = siteConfig.hero.botonTexto;
 
-            // Función ultra limpia para extraer el ID de YouTube desde cualquier enlace completo
+            // Inyectar Enfoque
+            document.getElementById('enfoque-titulo').innerText = siteConfig.enfoque.titulo;
+            document.getElementById('enfoque-subtitulo').innerText = siteConfig.enfoque.subtitulo;
+            document.getElementById('enf-t1').innerText = siteConfig.enfoque.tarjeta1Titulo;
+            document.getElementById('enf-p1').innerText = siteConfig.enfoque.tarjeta1Texto;
+            document.getElementById('enf-t2').innerText = siteConfig.enfoque.tarjeta2Titulo;
+            document.getElementById('enf-p2').innerText = siteConfig.enfoque.tarjeta2Texto;
+
+            // Inyectar Servicios dinámicamente
+            const serviciosList = document.getElementById('servicios-list');
+            siteConfig.servicios.forEach(serv => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${serv.titulo}</strong> ${serv.descripcion}`;
+                serviciosList.appendChild(li);
+            });
+
+            // Inyectar Contacto
+            document.getElementById('link-whatsapp').innerText = siteConfig.contacto.whatsapp;
+            document.getElementById('link-whatsapp').href = siteConfig.contacto.whatsappLink;
+            document.getElementById('txt-email').innerText = siteConfig.contacto.email;
+            document.getElementById('txt-atencion').innerText = siteConfig.contacto.atencion;
+
+            // Función para extraer ID de YouTube automáticamente
             function obtenerIdYouTube(url) {
                 if (!url) return '';
                 let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -169,29 +184,27 @@
                 return (match && match[2].length === 11) ? match[2] : '';
             }
 
-            // Cargar videos dinámicamente
+            // Inyectar Videos dinámicamente
             const videosGrid = document.getElementById('videos-grid');
-            if (videosGrid && siteConfig.videos) {
-                siteConfig.videos.forEach(video => {
-                    const videoId = obtenerIdYouTube(video.url);
-                    if (videoId) {
-                        const card = document.createElement('div');
-                        card.className = 'video-card';
-                        card.innerHTML = `
-                            <div class="video-container">
-                                <iframe src="https://www.youtube.com/embed/${videoId}" title="${video.titulo}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-info">
-                                <h3>${video.titulo}</h3>
-                                <p>${video.descripcion}</p>
-                            </div>
-                        `;
-                        videosGrid.appendChild(card);
-                    }
-                });
-            }
+            siteConfig.videos.forEach(video => {
+                const videoId = obtenerIdYouTube(video.url);
+                if (videoId) {
+                    const card = document.createElement('div');
+                    card.className = 'video-card';
+                    card.innerHTML = `
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/${videoId}" title="${video.titulo}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>${video.titulo}</h3>
+                            <p>${video.descripcion}</p>
+                        </div>
+                    `;
+                    videosGrid.appendChild(card);
+                }
+            });
         } else {
-            console.error("No se pudo cargar el archivo config.js. Asegúrate de que esté en la misma carpeta que index.html.");
+            console.error("Error: No se encontró el archivo config.js.");
         }
     </script>
 </body>
