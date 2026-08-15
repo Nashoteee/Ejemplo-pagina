@@ -8,15 +8,15 @@ const siteConfig = {
     email: "contacto@resolverchile.cl",
     atencion: "Presencial / Online",
 
-    // Videos de YouTube (Solo reemplaza el ID del video entre las comillas)
+    // Videos de YouTube (¡Ahora solo pegas el enlace completo!)
     videos: [
         {
-            id: ZrJOj9OmWWg&list=RDZrJOj9OmWWg&start_radio=1
+            url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", 
             titulo: "¿Cómo evitar multas en la Dirección del Trabajo?",
             descripcion: "Consejos clave para mantener la documentación de tu PYME en orden."
         },
         {
-            id: "TU_ID_VIDEO_2",
+            url: "https://youtu.be/AbCdEfGhIjk", 
             titulo: "Lo que debes saber sobre la Ley Karin",
             descripcion: "Implementación de protocolos obligatorios de prevención en espacios de trabajo."
         }
