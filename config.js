@@ -11,7 +11,7 @@ const siteConfig = {
     // Videos de YouTube (¡Ahora solo pegas el enlace completo!)
     videos: [
         {
-            url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", 
+            url: https://youtu.be/ZrJOj9OmWWg?list=RDZrJOj9OmWWg, 
             titulo: "¿Cómo evitar multas en la Dirección del Trabajo?",
             descripcion: "Consejos clave para mantener la documentación de tu PYME en orden."
         },
