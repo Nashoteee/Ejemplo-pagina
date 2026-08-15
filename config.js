@@ -11,7 +11,7 @@ const siteConfig = {
     // Videos de YouTube (Solo reemplaza el ID del video entre las comillas)
     videos: [
         {
-            id: "TU_ID_VIDEO_1", // Ejemplo: dQw4w9WgXcQ
+            id: -_lCS1k__wI, // Ejemplo: dQw4w9WgXcQ
             titulo: "¿Cómo evitar multas en la Dirección del Trabajo?",
             descripcion: "Consejos clave para mantener la documentación de tu PYME en orden."
         },
