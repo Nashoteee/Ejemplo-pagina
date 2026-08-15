@@ -4,7 +4,7 @@
 const siteConfig = {
     // Textos principales de la Cabecera y Hero
     hero: {
-        titulo: "hOLA",
+        titulo: "La mejor defensa es la prevención",
         subtitulo: "Asesoría laboral práctica para micro, pequeñas y medianas empresas. Ayudamos a tomar decisiones correctas y reducir riesgos de multas o conflictos.",
         botonTexto: "Solicitar Evaluación"
     },
